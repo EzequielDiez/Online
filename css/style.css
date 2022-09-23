@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  footer {
+    bottom: unset;
+  }
+  footer .col {
+    flex-basis: 100%;
+  }
+  footer .col:nth-child(2), footer .col :nth-child(3) {
+    flex-basis: 100%;
+  }
+}
+@-webkit-keyframes moving {
+  0% {
+    left: -20px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes moving {
+  0% {
+    left: -20px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+body .sectiontitulo {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  display: block;
+  position: relative;
+}
+body .sectiontitulo h1 {
+  font-size: 3.5rem;
+  padding-bottom: 4rem;
+}
+body .sectiontitulo p {
+  font-size: 1.5rem;
+  padding-bottom: 3rem;
+}
+body .sectiontitulo h3 {
+  font-size: 2rem;
+}
+body .sectionservicios {
+  display: block;
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+body .sectionservicios h2 {
+  font-size: 3rem;
+}
+body .sectionservicios::after {
+  content: "";
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(213, 203, 194) 20%, rgb(182, 174, 168) 40%, rgb(182, 174, 168) 60%, rgb(213, 203, 194) 80%, rgb(255, 255, 255) 100%);
+  opacity: 0.4;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+body .container-clientes {
+  max-width: 80%;
+  margin: 100px auto;
+}
+body .container-clientes h2 {
+  font-size: 3rem;
+  text-align: center;
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+body .container-clientes h2::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 4px;
+  background-color: #d3bcaf;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+body .container-clientes .logo-slider .item {
+  background-color: white;
+}
+body .container-clientes .logo-slider .item:hover {
+  display: block;
+  transition: all ease 0.3s;
+  transform: scale(1.1) translateY(-5px);
+}
+body .container-clientes .logo-slider .item img {
+  width: 250px;
+  height: 250px;
+}
+body .container-clientes .logo-slider .slick-slide {
+  margin: 15px;
+}
+body .container-clientes .logo-slider .slick-dots li button:before {
+  font-size: 12px;
+}
+body .container-clientes .logo-slider .slick-dots li.slick-active button:before {
+  color: #d3bcaf;
+}
+body .container-clientes .logo-slider .slick-next:before, body .container-clientes .logo-slider .slick-prev:before {
+  color: #d3bcaf;
+  font-size: 24px;
+}
+body .contacto {
+  position: relative;
+  height: auto;
+  padding: 187px 0;
+}
+body .contacto::before {
+  content: "";
+  background: url(../img/background_contact.png) no-repeat center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+}
+body .contacto h2 {
+  position: relative;
+  font-size: 3rem;
+  text-align: center;
+}
+body .contacto div {
+  position: relative;
+  width: 100px;
+  height: 10px;
+  background: #d3bcaf;
+  margin: 40px auto;
+}
+body .contacto .contacto-form {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding: 0 10px;
+  overflow: hidden;
+}
+body .contacto .contacto-form .contacto-form-text {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  padding: 20px 40px;
+  outline: none;
+  color: #d3bcaf;
+  transition: 0.5s;
+}
+body .contacto .contacto-form .contacto-form-text:focus {
+  box-shadow: 0 0 10px 4px #d3bcaf;
+}
+body .contacto .contacto-form textarea {
+  resize: none;
+  height: 120px;
+}
+body .contacto .contacto-form .contacto-form-btn {
+  float: right;
+  border: 0;
+  background: #bba79e;
+  color: #ffffff;
+  padding: 12px 50px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body .contacto .contacto-form .contacto-form-btn:hover {
+  background: #d3bcaf;
+}
+body footer {
+  width: 100%;
+  position: absolute;
+  bottom: 50;
+  background: linear-gradient(to right, #d3bcaf, #bba79e);
+  color: #ffffff;
+  padding: 100px 0 30px;
+  border-top-left-radius: 125px;
+  font-size: 16px;
+  line-height: 20px;
+}
+body footer .row {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+body footer .row .col {
+  flex-basis: 25%;
+  padding: 10px;
+}
+body footer .row .col:nth-child(2), body footer .row .col:nth-child(3) {
+  flex-basis: 15%;
+}
+body footer .row .col .logo-footer {
+  width: 350px;
+  margin-bottom: 30px;
+}
+body footer .row .col h3 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+body footer .row .col .email-id {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 1px solid #ffffff;
+  margin: 20px 0;
+}
+body footer .row .col ul li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+body footer .row .col ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+body footer .row .col form {
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 50px;
+}
+body footer .row .col form .fa-regular {
+  font-size: 18px;
+  margin-right: 10px;
+}
+body footer .row .col form input {
+  width: 100%;
+  background: transparent;
+  color: #ffffff;
+  border: 0;
+  outline: none;
+}
+body footer .row .col form button {
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+body footer .row .col form button .fa-solid {
+  font-size: 16px;
+  color: #ffffff;
+}
+body footer .row .col .redes-iconos .fa-brands {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: #d3bcaf;
+  background: #ffffff;
+  margin-right: 15px;
+  cursor: pointer;
+}
+body footer .row .col .underline {
+  width: 100%;
+  height: 5px;
+  background: #767676;
+  border-radius: 3px;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  overflow: hidden;
+}
+body footer .row .col .underline span {
+  width: 15px;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  -webkit-animation: moving 2s linear infinite;
+          animation: moving 2s linear infinite;
+}
+body footer hr {
+  width: 90%;
+  border: 0;
+  border-bottom: 1px solid #ffffff;
+  margin: 20px auto;
+}
+body footer .copyright {
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
