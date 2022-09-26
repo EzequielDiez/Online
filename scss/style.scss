@@ -181,6 +181,71 @@ body{
 
 //PAGE SHOP
 
+//PAGE CARRITO
+
+.sectioncarrito{
+    h2{
+        font-size: 3rem;
+        text-align: center;
+        position: relative;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    table{
+        thead{
+            tr{
+                .thproducto{
+                    width: 50%;
+                }
+                .thprecio{
+                    width: 10%;
+                }
+                .thcantidad{
+                    width: 8%;
+                }
+                .thsubtotal{
+                    width: 22%;
+                }
+                .thbuttons{
+                    width: 10%;
+                }
+            }
+        }
+        tbody{
+            tr{
+                td{
+                    vertical-align: middle;
+                    div{
+                        div{
+                            img{
+                                width: 150px;
+                                height: 150px
+                            }
+                        }
+                    }
+                    button{
+                        .fa{
+                            color: map-get($estilos, colorPrincipal2);
+                            font-size: 2rem;
+                            cursor:pointer;
+                            &:hover{
+                                color: black
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        tfoot{
+            tr{
+                td{
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+
 
 //INICIO FOOTER
 

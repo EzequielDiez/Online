@@ -58,37 +58,35 @@
       </div>
     </nav>
   </header>
-
-  <article>
-    <h1>Carrito</h1>
-  </article>
   
-  <section>
+  <section class="sectioncarrito">
     <h2>Mi Carrito</h2>
-    <table>
-      <tbody>
+    <table id="cart" class="table table-hover table-condensed">
+      <thead>
         <tr>
-          <td></td>
-          <td></td>
+          <th class="thproducto">Producto</th>
+          <th class="thprecio">Precio</th>
+          <th class="thcantidad">Cantidad</th>
+          <th class="thsubtotal text-center">Subtotal</th>
+          <th class="thbuttons"></th>
         </tr>
+      </thead>
+      <tbody>
+        <!-- Carrito dinámico (carrito.js) -->
       </tbody>
+      <tfoot>
+        <tr class="visible-xs">
+          <td class="text-center"><strong>Total 1.99</strong></td>
+        </tr>
+        <tr>
+          <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Agregar más productos</a></td>
+          <td colspan="2" class="hidden-xs"></td>
+          <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+          <td><a href="#" class="btn btn-success btn-block">Comprar <i class="fa fa-angle-right"></i></a></td>
+        </tr>
+      </tfoot>
     </table>
   </section>
-
-  <section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  </section>
-
-
 
 
   <footer>

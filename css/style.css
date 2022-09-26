@@ -186,6 +186,46 @@ body .contacto .contacto-form .contacto-form-btn {
 body .contacto .contacto-form .contacto-form-btn:hover {
   background: #d3bcaf;
 }
+body .sectioncarrito h2 {
+  font-size: 3rem;
+  text-align: center;
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+body .sectioncarrito table thead tr .thproducto {
+  width: 50%;
+}
+body .sectioncarrito table thead tr .thprecio {
+  width: 10%;
+}
+body .sectioncarrito table thead tr .thcantidad {
+  width: 8%;
+}
+body .sectioncarrito table thead tr .thsubtotal {
+  width: 22%;
+}
+body .sectioncarrito table thead tr .thbuttons {
+  width: 10%;
+}
+body .sectioncarrito table tbody tr td {
+  vertical-align: middle;
+}
+body .sectioncarrito table tbody tr td div div img {
+  width: 150px;
+  height: 150px;
+}
+body .sectioncarrito table tbody tr td button .fa {
+  color: #d3bcaf;
+  font-size: 2rem;
+  cursor: pointer;
+}
+body .sectioncarrito table tbody tr td button .fa:hover {
+  color: black;
+}
+body .sectioncarrito table tfoot tr td {
+  vertical-align: middle;
+}
 body footer {
   width: 100%;
   position: absolute;
