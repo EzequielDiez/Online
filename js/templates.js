@@ -43,19 +43,21 @@ const Productos = [
     }
 ]
 
+let Carrito = []
+
 const CargarEventos = () =>{
     let buttons = document.querySelectorAll('.button-card')
     for (const button of buttons) {
         button.addEventListener('click', ()=>{
             const prod = Productos.find(producto => producto.id == button.id)
-            console.log('prod object: ', prod)
+                Carrito.push(prod)
+                localStorage.setItem("Carrito", JSON.stringify(Carrito))
         })
     }
 }
 
 const CargarProductos = (Productos) => {
     let sectioncards = document.querySelector('#sectioncards')
-    debugger
     for (const Producto of Productos) {
         let div = document.createElement('div');
         div.setAttribute('class', 'col-sm-12 col-md-4 col-lg-4 py-3');
@@ -75,4 +77,12 @@ const CargarProductos = (Productos) => {
     CargarEventos();
 }
 
+function recuperarCarrito(){
+    if (localStorage.getItem("Carrito")) {
+        Carrito = JSON.parse(localStorage.getItem("Carrito"))
+    }
+}
+
 CargarProductos(Productos)
+
+recuperarCarrito()

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script defer src="./js/carousel.js"></script>
+  <script defer src="./js/contacto.js"></script>
   <script src="https://kit.fontawesome.com/df7a44d5fc.js"></script>
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -124,11 +125,11 @@
     <h2>CONTACTÁNOS</h2>
     <div class="border"></div>
     <form class="contacto-form" action="index.html" method="post">
-      <input type="text" class="contacto-form-text" placeholder="Tu nombre">
-      <input type="email" class="contacto-form-text" placeholder="Tu email">
-      <input type="text" class="contacto-form-text" placeholder="N° de celular">
-      <textarea class="contacto-form-text" placeholder="Escribe un mensaje..."></textarea>
-      <input type="submit" class="contacto-form-btn" value="Enviar">
+      <input type="text" class="contacto-form-text" placeholder="Tu nombre" id="inputNombre">
+      <input type="email" class="contacto-form-text" placeholder="Tu email" id="inputEmail">
+      <input type="text" class="contacto-form-text" placeholder="N° de celular" id="inputCelular">
+      <textarea class="contacto-form-text" placeholder="Escribe un mensaje..." id="inputMensaje"></textarea>
+      <button class="contacto-form-btn" id="btnEnviar">Enviar</button>
     </form>
   </section>
 
