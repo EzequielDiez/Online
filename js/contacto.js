@@ -5,17 +5,18 @@ const inputMensaje = document.querySelector("#inputMensaje")
 const btnEnviar = document.querySelector("#btnEnviar")
 
 function guardarDatos() {
-    localStorage.setItem("Nombre", inputNombre.value)
-    localStorage.setItem("Email", inputEmail.value)
-    localStorage.setItem("Celular", inputCelular.value)
-    localStorage.setItem("Mensaje", inputMensaje.value)
+    const formulario = {
+        nombre: inputNombre.value,
+        email: inputEmail.value,
+        celular: inputCelular.value,
+        mensaje: inputMensaje.mensaje
+    }
+    localStorage.setItem("formulario", JSON.stringify(formulario))
 }
 
 btnEnviar.addEventListener("click", guardarDatos)
 
-function recuperarDatos(){
-    inputNombre.value = localStorage.getItem("Nombre")
-    inputEmail.value = localStorage.getItem("Email")
-    inputCelular.value = localStorage.getItem("Celular")
-    inputMensaje.value = localStorage.getItem("Mensaje")
+function recuperarDatos() {
+    let recuperarFormulario = localStorage.getItem("formulario", JSON.parse(recuperarFormulario))
 }
+
