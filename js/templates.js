@@ -45,17 +45,6 @@ const Productos = [
 
 let Carrito = []
 
-const CargarEventos = () =>{
-    let buttons = document.querySelectorAll('.button-card')
-    for (const button of buttons) {
-        button.addEventListener('click', ()=>{
-            const prod = Productos.find(producto => producto.id == button.id)
-                Carrito.push(prod)
-                localStorage.setItem("Carrito", JSON.stringify(Carrito))
-        })
-    }
-}
-
 const CargarProductos = (Productos) => {
     let sectioncards = document.querySelector('#sectioncards')
     for (const Producto of Productos) {
@@ -68,14 +57,36 @@ const CargarProductos = (Productos) => {
                     <h4 class="card-title">${Producto.nombre}</h4>
                     <p class="card-text">${Producto.descripcion}</p>
                     <h5>$${Producto.precio}</h5>
-                    <a href="#" class="btn btn-sm btn-secondary button-card" id="${Producto.id}">Agregar al carrito</a>
+                    <a href="#" class="btn btn-sm btn-secondary button-card" id="agregar${Producto.id}">Agregar al carrito</a>
                 </div>
             </div>
         `;
         sectioncards.appendChild(div)
+
+        const boton = document.querySelector(`#agregar${Producto.id}`)
+            boton.addEventListener('click', () => {
+                agregarAlCarrito(Producto.id)
+            })
     }
-    CargarEventos();
 }
+
+const agregarAlCarrito = (prodId) => {
+    debugger
+    const existe = Carrito.some (prod => prod.id === prodId)
+
+    if (existe){
+        const prod = Carrito.map (prod => {
+            if (prod.id === prodId){
+                prod.cantidad++
+            }
+        })
+    } else {
+        const prod = Productos.find(producto => producto.id === prodId)
+        Carrito.push(prod)
+        localStorage.setItem("Carrito", JSON.stringify(Carrito))
+    }    
+}
+
 
 function recuperarCarrito(){
     if (localStorage.getItem("Carrito")) {
