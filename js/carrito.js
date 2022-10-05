@@ -1,5 +1,7 @@
+const carritovacio = "El carrito se encuentra vacío"
 
-const carrito = JSON.parse(localStorage.getItem("Carrito")) || []
+const carrito = JSON.parse(localStorage.getItem("Carrito")) || carritovacio 
+
 let tabla = document.querySelector("tbody")
     carrito.forEach(prod => {
     let fila =  `<tr>
@@ -26,7 +28,7 @@ let tabla = document.querySelector("tbody")
     })
 
 const eliminarDelCarrito = (prodId) => {
-    const item = carrito.find((prod) => prod.id === prodId)
-    const indice = carrito.indexOf(item)
-    carrito.splice(indice, 1)
+    debugger
+    let index = carrito.findIndex(prod => prod.id === prodId)
+    carrito.splice(index, 1)
 }

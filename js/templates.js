@@ -65,13 +65,23 @@ const CargarProductos = (Productos) => {
 
         const boton = document.querySelector(`#agregar${Producto.id}`)
             boton.addEventListener('click', () => {
-                agregarAlCarrito(Producto.id)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Producto agregado al carrito',
+                    showConfirmButton: false,
+                    timer: 1000
+                  }).then(function(confirmed) {
+                    if(confirmed) {
+                        agregarAlCarrito(Producto.id)
+                    }
+                  });
             })
     }
 }
 
 const agregarAlCarrito = (prodId) => {
-    debugger
+
     const existe = Carrito.some (prod => prod.id === prodId)
 
     if (existe){
