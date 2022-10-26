@@ -181,6 +181,18 @@ body{
 
 //PAGE SHOP
 
+
+.button-card{
+    border: none;
+    background: map-get($estilos, colorSecundario2);
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover{
+        background: map-get($estilos, colorPrincipal2);
+    }
+}
+
+
 //PAGE CARRITO
 
 .sectioncarrito{
@@ -240,6 +252,27 @@ body{
             tr{
                 td{
                     vertical-align: middle;
+                    .botonAgregarProductos{
+                        border: none;
+                        color:#ffffff;
+                        background: map-get($estilos, colorSecundario2);
+                        cursor: pointer;
+                        transition: 0.5s;
+                        &:hover{
+                            background: map-get($estilos, colorPrincipal2);
+                            color: #ffffff;
+                        }
+                    }
+                    #realizarCompra{
+                        border: none;
+                        color:#ffffff;
+                        background: map-get($estilos, colorSecundario2);
+                        cursor: pointer;
+                        transition: 0.5s;
+                        &:hover{
+                            background: map-get($estilos, colorPrincipal2);
+                        }
+                    }
                 }
             }
         }

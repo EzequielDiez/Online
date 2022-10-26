@@ -186,6 +186,15 @@ body .contacto .contacto-form .contacto-form-btn {
 body .contacto .contacto-form .contacto-form-btn:hover {
   background: #d3bcaf;
 }
+body .button-card {
+  border: none;
+  background: #bba79e;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body .button-card:hover {
+  background: #d3bcaf;
+}
 body .sectioncarrito h2 {
   font-size: 3rem;
   text-align: center;
@@ -225,6 +234,27 @@ body .sectioncarrito table tbody tr td button .fa:hover {
 }
 body .sectioncarrito table tfoot tr td {
   vertical-align: middle;
+}
+body .sectioncarrito table tfoot tr td .botonAgregarProductos {
+  border: none;
+  color: #ffffff;
+  background: #bba79e;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body .sectioncarrito table tfoot tr td .botonAgregarProductos:hover {
+  background: #d3bcaf;
+  color: #ffffff;
+}
+body .sectioncarrito table tfoot tr td #realizarCompra {
+  border: none;
+  color: #ffffff;
+  background: #bba79e;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body .sectioncarrito table tfoot tr td #realizarCompra:hover {
+  background: #d3bcaf;
 }
 body footer {
   width: 100%;
