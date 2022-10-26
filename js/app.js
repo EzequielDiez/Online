@@ -3,50 +3,45 @@ const Carrito = JSON.parse(localStorage.getItem('Carrito')) || [];
 
 const URL = "../js/productos.json"
 
-const cantidadCarrito = () =>
-{
+//Indica cantidad de productos que existe en el carrito en navbar.
+const cantidadCarrito = () => {
     const label = document.querySelector('#cantidadCarrito');
     const total = Carrito.reduce((acc, item) => acc + item.cantidad, 0);
-    if(total > 0)
-    {
+    if (total > 0) {
         label.innerText = total;
     }
 }
 
-const notificationapp = (text) =>
-{
+//Formato cuando se agrega producto al carrito.
+const notificationapp = (text) => {
     Toastify({
         text: text,
         className: "info",
         duration: 2000,
         style: {
-          background: "#bba79e",
-          color:"#ffffff"
+            background: "#bba79e",
+            color: "#ffffff"
         }
-      }).showToast();
+    }).showToast();
 }
 
-
+//Función para botones de las cards y agregar al carrito.
 const cargarEventos = () => {
     let botones = document.querySelectorAll('.button-card')
-    for (const boton of botones) 
-    {
-        boton.addEventListener('click', ()=>{
+    for (const boton of botones) {
+        boton.addEventListener('click', () => {
             let existe = Carrito.find(element => element.id == boton.id);
-            if(existe)
-            {
-                // esta en el carrito
+            if (existe) {
+                // Si el producto existe suma 1 unidad al carrito.
                 existe.cantidad++;
                 localStorage.setItem('Carrito', JSON.stringify(Carrito));
                 notificationapp('El producto ya existe en su carrito, se agregó 1 unidad.')
-            }
-            else
-            {
+            } else {
+                // Si el producto no existe lo agrega al carrito.
                 let Producto = Productos.find(element => element.id == boton.id);
-                if(Producto)
-                {
+                if (Producto) {
                     let nuevoProducto = {
-                        id:Producto.id,
+                        id: Producto.id,
                         nombre: Producto.nombre,
                         precio: Producto.precio,
                         descripcion: Producto.descripcion,
@@ -63,13 +58,14 @@ const cargarEventos = () => {
     }
 }
 
+//Función para cargar HTML de productos a la Tienda.
 const cargarProductos = (Productos) => {
     let sectionCards = document.querySelector('#sectioncards')
     for (const Producto of Productos) {
         let div = document.createElement('div');
         div.setAttribute('class', 'col-sm-12 col-md-4 col-lg-4 py-3')
-        div.innerHTML = 
-                        `<div class="card border-0 h-100">
+        div.innerHTML =
+            `<div class="card border-0 h-100">
                             <img src="${Producto.imagen}" class="card-img-top" alt="${Producto.nombre}">
                             <div class="card-body">
                                 <h4 class="card-title">${Producto.nombre}</h4>
@@ -80,11 +76,11 @@ const cargarProductos = (Productos) => {
                         </div>`
         sectionCards.appendChild(div)
     }
-    cargarEventos()  
+    cargarEventos()
 }
 
+//Función para recuperar productos de archivo JSON. 
 const recuperarData = async () => {
-    debugger
     try {
         const response = await fetch(URL)
         const data = await response.json()

@@ -12,10 +12,10 @@ function guardarDatos(e) {
         celular: inputCelular.value,
         mensaje: inputMensaje.value
     }
-    inputNombre.value=""
-    inputEmail.value=""
-    inputCelular.value=""
-    inputMensaje.value=""
+    inputNombre.value = ""
+    inputEmail.value = ""
+    inputCelular.value = ""
+    inputMensaje.value = ""
     localStorage.setItem("formulario", JSON.stringify(formulario))
 }
 
@@ -24,4 +24,3 @@ btnEnviar.addEventListener("click", guardarDatos)
 function recuperarDatos() {
     let recuperarFormulario = localStorage.getItem("formulario", JSON.parse(recuperarFormulario))
 }
-

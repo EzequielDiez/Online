@@ -3,42 +3,42 @@
         "id": 1,
         "nombre":"Template 'Médico'",
         "descripcion": "Contiene 15 plantillas editables en Canva para mejorar la estética del feed de tu emprendimiento",
-        "precio": "6.000",
+        "precio": 6000,
         "imagen": "../img/templates/template001.png"
     },
     {
         "id": 2,
         "nombre":"Template 'Computación'",
         "descripcion": "Contiene 15 plantillas editables en Canva para mejorar la estética del feed de tu emprendimiento",
-        "precio": "6.000",
+        "precio": 6000,
         "imagen": "../img/templates/template002.png"
     },
     {
         "id": 3,
         "nombre":"Template 'Decoración'",
         "descripcion": "Contiene 15 plantillas editables en Canva para mejorar la estética del feed de tu emprendimiento",
-        "precio": "6.000",
+        "precio": 6000,
         "imagen": "../img/templates/template001.png"
     },
     {
         "id": 4,
         "nombre":"Template 'Deporte'",
         "descripcion": "Contiene 15 plantillas editables en Canva para mejorar la estética del feed de tu emprendimiento",
-        "precio": "6.000",
+        "precio": 6000,
         "imagen": "../img/templates/template002.png"
     },
     {
         "id": 5,
         "nombre":"Template 'Indumentaria'",
         "descripcion": "Contiene 15 plantillas editables en Canva para mejorar la estética del feed de tu emprendimiento",
-        "precio": "6.000",
+        "precio": 6000,
         "imagen": "../img/templates/template001.png"
     },
     {
         "id": 6,
         "nombre":"Template 'Gastronomía'",
         "descripcion": "Contiene 15 plantillas editables en Canva para mejorar la estética del feed de tu emprendimiento",
-        "precio": "6.000",
+        "precio": 6000,
         "imagen": "../img/templates/template002.png"
     }
 ]

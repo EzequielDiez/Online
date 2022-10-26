@@ -1,67 +1,79 @@
-const notification = (text, color) =>
-{
+// Formato para producto eliminado.
+const notification = (text, color) => {
     Toastify({
         text: text,
         className: "info",
         duration: 2000,
         style: {
-          background: "#bba79e",
-          color:"#ffffff"
+            background: "#bba79e",
+            color: "#ffffff"
         }
-      }).showToast();
+    }).showToast();
 }
 
-const loadEvents = (total) =>
-{   
-    // checkout functionality
+// Función finalizar compra.
+const loadEvents = (total) => {
     const botonComprar = document.querySelector('#realizarCompra');
-    botonComprar.addEventListener('click', ()=>{
-        localStorage.removeItem('Carrito'); // remove cart
-        // location.reload(true); // reload page
-        if(total > 0)
-        {
-            const mensaje = 'Compra finalizada su total es de $' + total;
-            notification(mensaje, "#00a650");
-            setTimeout(() => {
-                window.location.href = "../index.html"; // reditect to index
+    botonComprar.addEventListener('click', () => {
+        localStorage.removeItem('Carrito'); // Eliminar Carrito una vez realizada la compra.
+        if (total == 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'No hay productos en el carrito',
+                footer: '<a href="./shop.html">Ir a la Tienda</a>'
+              })
+        } else {
+            Swal.fire({
+                title: '¿Deseas realizar la compra?',
+                text: "Si continúas no podrás cancelar la compra",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#bba79e',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Confirmar'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire(
+                    'Su compra ha sido realizada',
+                    'Nos pondremos en contacto a la brevedad',
+                    'success'
+                  )
+                    setTimeout(() => {
+                window.location.href = "../index.html"; //Redirección al Inicio despues de 3".
             }, 3000);
-        }
-        else
-        {
-            const mensaje = 'No tenes productos en el carrito!';
-            notification(mensaje, "	#ff0000");
+                }
+              })
         }
     });
 
-    // delete item
+    //Función eliminar producto del carrito.
     const eliminarProducto = document.querySelectorAll('.eliminarProducto');
-    for (const boton of eliminarProducto)
-    {   
-        boton.addEventListener('click', ()=>{
+    for (const boton of eliminarProducto) {
+        boton.addEventListener('click', () => {
             const nuevoCarrito = carritoCompras.filter(element => element.id != boton.id);
-            localStorage.setItem('Carrito', JSON.stringify(nuevoCarrito)); // set new cart in storage
-              notification('Producto eliminado con éxito!');
-              setTimeout(() => {
-                  location.reload(true); // reload page
-              }, 1000);
+            localStorage.setItem('Carrito', JSON.stringify(nuevoCarrito)); //Carga de nuevo carrito sin el producto eliminado.
+            notification('Producto eliminado con éxito!');
+            setTimeout(() => {
+                location.reload(true); // Refresh página
+            }, 1000);
         })
     }
 }
 
 
-
-const actualizarCarrito = (Carrito) =>
-{
+//Función para actualizar el carrito cada vez que se agrega nuevo producto.
+const actualizarCarrito = (Carrito) => {
     let sectionCarrito = document.querySelector(".sectioncarrito")
     let container = document.querySelector("containercarrito")
-    if(container){
+    if (container) {
         container.parentNode.removeChild(container)
     }
     let div = document.createElement('div')
-    div.setAttribute('id','containercarrito')
-        let tablacarrito = document.querySelector("tbody")
-            for (const Producto of Carrito) {
-            let fila =  `<tr>
+    div.setAttribute('id', 'containercarrito')
+    let tablacarrito = document.querySelector("tbody")
+    for (const Producto of Carrito) {
+        let fila = `<tr>
                         <td data-th="Producto">
                             <div class="row">
                                 <div class="col-sm-2"><img src="${Producto.imagen}" alt="..." class="img-responsive"/></div>
@@ -79,11 +91,12 @@ const actualizarCarrito = (Carrito) =>
                             <button class="btn btn-sm eliminarProducto"  id="${Producto.id}"><i class="fa fa-trash-o"></i></button>								
                         </td>
                     </tr>`
-                    tablacarrito.innerHTML += fila
+        tablacarrito.innerHTML += fila
     }
+    //Funcion para suma total del carrito
     const total = Carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
     let totalCarrito = document.querySelector("#totalcarrito")
-        totalCarrito.innerHTML = "TOTAL $" + total.toFixed(3)
+    totalCarrito.innerHTML = "TOTAL $" + total.toFixed(2)
 
     sectionCarrito.appendChild(div);
     loadEvents(total);

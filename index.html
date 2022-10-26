@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online - Marketing Creativo</title>
+  <!----======== Bootstrap ======== -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <!--SCRIPT JQUERY-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -13,9 +14,14 @@
   <!--CSS SLICK-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!----======== Sweet Alert ======== -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!----======== Archivos JS locales ======== -->
   <script defer src="./js/carousel.js"></script>
   <script defer src="./js/contacto.js"></script>
+  <!----======== FONTS ======== -->
   <script src="https://kit.fontawesome.com/df7a44d5fc.js"></script>
+  <!----======== CSS local ======== -->
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -125,10 +131,10 @@
     <h2>CONTACTÁNOS</h2>
     <div class="border"></div>
     <form class="contacto-form" action="index.html" method="post">
-      <input type="text" class="contacto-form-text" placeholder="Tu nombre" id="inputNombre">
-      <input type="email" class="contacto-form-text" placeholder="Tu email" id="inputEmail">
-      <input type="text" class="contacto-form-text" placeholder="N° de celular" id="inputCelular">
-      <textarea class="contacto-form-text" placeholder="Escribe un mensaje..." id="inputMensaje"></textarea>
+      <input type="text" class="contacto-form-text" placeholder="Tu nombre" id="inputNombre" value="Ezequiel Diez">
+      <input type="email" class="contacto-form-text" placeholder="Tu email" id="inputEmail" value="ezequieldiez.emd@gmail.com">
+      <input type="text" class="contacto-form-text" placeholder="N° de celular" id="inputCelular" value="123456789">
+      <textarea class="contacto-form-text" placeholder="Escribe un mensaje..." id="inputMensaje">Hola, queria saber el precio de...</textarea>
       <button class="contacto-form-btn" id="btnEnviar">Enviar</button>
     </form>
   </section>
